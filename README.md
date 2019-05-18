@@ -1,4 +1,4 @@
-# Separable Convolution Filters (Bachelor's Degree Thesis)
+# Separable Convolution Filters – Bachelor's Degree Thesis
 
 Project for my bachelor's degree thesis at University of Bologna.
 
