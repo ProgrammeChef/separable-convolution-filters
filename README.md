@@ -1,6 +1,6 @@
-# Separable Convolution Filters – Bachelor's Degree Thesis
+# Separable Convolution Filters – Separable convolution filters for FPGA
 
-Project for my bachelor's degree thesis at University of Bologna.
+Separable convolution filters for FPGA. Project for my bachelor's degree thesis at University of Bologna.
 
 (A.Y. 2017-2018)
 
