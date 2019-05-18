@@ -1,0 +1,437 @@
+
+
+================================================================
+== Vivado HLS Report for 'sep_convolution_filter'
+================================================================
+* Date:           Fri Sep 15 14:43:01 2017
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        Sep_Convolution_Filter
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  41.67|     34.94|        5.21|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  308324|  308324|  308325|  308325|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+--------+--------+----------+-----------+-----------+--------+----------+
+        |                     |     Latency     | Iteration|  Initiation Interval  |  Trip  |          |
+        |      Loop Name      |   min  |   max  |  Latency |  achieved |   target  |  Count | Pipelined|
+        +---------------------+--------+--------+----------+-----------+-----------+--------+----------+
+        |- Loop_row_Loop_col  |  308322|  308322|         3|          1|          1|  308321|    yes   |
+        +---------------------+--------+--------+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 5
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 3, States = { 2 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	5  / (exitcond_flatten)
+	3  / (!exitcond_flatten)
+3 --> 
+	4  / true
+4 --> 
+	2  / true
+5 --> 
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: stg_6 [1/1] 0.00ns
+.preheader68.preheader:0  call void (...)* @_ssdm_op_SpecBitsMap(i8* %in_img_V), !map !82
+
+ST_1: stg_7 [1/1] 0.00ns
+.preheader68.preheader:1  call void (...)* @_ssdm_op_SpecBitsMap(i8* %out_img_V), !map !88
+
+ST_1: stg_8 [1/1] 0.00ns
+.preheader68.preheader:2  call void (...)* @_ssdm_op_SpecTopModule([23 x i8]* @sep_convolution_filter_str) nounwind
+
+ST_1: stg_9 [1/1] 0.00ns
+.preheader68.preheader:3  call void (...)* @_ssdm_op_SpecInterface(i8* %out_img_V, [5 x i8]* @p_str3, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str)
+
+ST_1: stg_10 [1/1] 0.00ns
+.preheader68.preheader:4  call void (...)* @_ssdm_op_SpecInterface(i8* %in_img_V, [5 x i8]* @p_str3, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str)
+
+ST_1: stg_11 [1/1] 1.57ns
+.preheader68.preheader:5  br label %0
+
+
+ <State 2>: 8.25ns
+ST_2: indvar_flatten [1/1] 0.00ns
+:0  %indvar_flatten = phi i19 [ 0, %.preheader68.preheader ], [ %indvar_flatten_next, %._crit_edge74 ]
+
+ST_2: row [1/1] 0.00ns
+:1  %row = phi i9 [ 0, %.preheader68.preheader ], [ %row_mid2, %._crit_edge74 ]
+
+ST_2: col [1/1] 0.00ns
+:2  %col = phi i10 [ 0, %.preheader68.preheader ], [ %col_1, %._crit_edge74 ]
+
+ST_2: exitcond_flatten [1/1] 2.33ns
+:3  %exitcond_flatten = icmp eq i19 %indvar_flatten, -215967
+
+ST_2: indvar_flatten_next [1/1] 2.08ns
+:4  %indvar_flatten_next = add i19 %indvar_flatten, 1
+
+ST_2: stg_17 [1/1] 0.00ns
+:5  br i1 %exitcond_flatten, label %2, label %.reset
+
+ST_2: exitcond [1/1] 2.07ns
+.reset:2  %exitcond = icmp eq i10 %col, -383
+
+ST_2: col_mid2 [1/1] 1.37ns
+.reset:3  %col_mid2 = select i1 %exitcond, i10 0, i10 %col
+
+ST_2: row_s [1/1] 1.84ns
+.reset:4  %row_s = add i9 %row, 1
+
+ST_2: tmp_mid1 [1/1] 2.03ns
+.reset:5  %tmp_mid1 = icmp ult i9 %row_s, -32
+
+ST_2: tmp6 [1/1] 2.03ns
+.reset:6  %tmp6 = icmp ult i9 %row, -32
+
+ST_2: tmp_mid2 [1/1] 1.37ns
+.reset:7  %tmp_mid2 = select i1 %exitcond, i1 %tmp_mid1, i1 %tmp6
+
+ST_2: tmp_2_mid1 [1/1] 2.03ns
+.reset:8  %tmp_2_mid1 = icmp ne i9 %row_s, 0
+
+ST_2: tmp_s [1/1] 2.03ns
+.reset:9  %tmp_s = icmp ne i9 %row, 0
+
+ST_2: tmp_2_mid2 [1/1] 1.37ns
+.reset:10  %tmp_2_mid2 = select i1 %exitcond, i1 %tmp_2_mid1, i1 %tmp_s
+
+ST_2: row_mid2 [1/1] 1.37ns
+.reset:11  %row_mid2 = select i1 %exitcond, i9 %row_s, i9 %row
+
+ST_2: tmp_4 [1/1] 2.07ns
+.reset:15  %tmp_4 = icmp ult i10 %col_mid2, -384
+
+ST_2: stg_29 [1/1] 0.00ns
+.reset:16  br i1 %tmp_4, label %.preheader.preheader, label %.loopexit
+
+ST_2: tmp_5 [1/1] 0.00ns
+.preheader.preheader:0  %tmp_5 = zext i10 %col_mid2 to i64
+
+ST_2: line_buffer_V_0_addr [1/1] 0.00ns
+.preheader.preheader:1  %line_buffer_V_0_addr = getelementptr [640 x i8]* @line_buffer_V_0, i64 0, i64 %tmp_5
+
+ST_2: line_buffer_V_0_load [2/2] 2.71ns
+.preheader.preheader:2  %line_buffer_V_0_load = load i8* %line_buffer_V_0_addr, align 1
+
+ST_2: line_buffer_V_1_addr [1/1] 0.00ns
+.preheader.preheader:4  %line_buffer_V_1_addr = getelementptr [640 x i8]* @line_buffer_V_1, i64 0, i64 %tmp_5
+
+ST_2: line_buffer_V_1_load [2/2] 2.71ns
+.preheader.preheader:5  %line_buffer_V_1_load = load i8* %line_buffer_V_1_addr, align 1
+
+ST_2: or_cond [1/1] 1.37ns
+.loopexit:0  %or_cond = and i1 %tmp_4, %tmp_mid2
+
+ST_2: stg_36 [1/1] 0.00ns
+.loopexit:1  br i1 %or_cond, label %1, label %.loopexit._crit_edge
+
+ST_2: in_temp_V [1/1] 0.00ns
+:0  %in_temp_V = call i8 @_ssdm_op_Read.axis.volatile.i8P(i8* %in_img_V)
+
+ST_2: tmp_9 [1/1] 2.07ns
+.loopexit._crit_edge:0  %tmp_9 = icmp ne i10 %col_mid2, 0
+
+ST_2: or_cond1 [1/1] 1.37ns
+.loopexit._crit_edge:1  %or_cond1 = and i1 %tmp_2_mid2, %tmp_9
+
+ST_2: stg_40 [1/1] 0.00ns
+.loopexit._crit_edge:2  br i1 %or_cond1, label %.preheader79.0, label %._crit_edge74
+
+ST_2: col_1 [1/1] 1.84ns
+._crit_edge74:1  %col_1 = add i10 %col_mid2, 1
+
+
+ <State 3>: 5.42ns
+ST_3: line_buffer_V_0_load [1/2] 2.71ns
+.preheader.preheader:2  %line_buffer_V_0_load = load i8* %line_buffer_V_0_addr, align 1
+
+ST_3: stg_43 [1/1] 0.00ns
+.preheader.preheader:3  store i8 %line_buffer_V_0_load, i8* @window_V_0, align 1
+
+ST_3: line_buffer_V_1_load [1/2] 2.71ns
+.preheader.preheader:5  %line_buffer_V_1_load = load i8* %line_buffer_V_1_addr, align 1
+
+ST_3: stg_45 [1/1] 2.71ns
+.preheader.preheader:6  store i8 %line_buffer_V_1_load, i8* %line_buffer_V_0_addr, align 1
+
+ST_3: stg_46 [1/1] 0.00ns
+.preheader.preheader:7  store i8 %line_buffer_V_1_load, i8* @window_V_1, align 1
+
+ST_3: stg_47 [1/1] 0.00ns
+.preheader.preheader:8  br label %.loopexit
+
+ST_3: stg_48 [1/1] 0.00ns
+:1  store i8 %in_temp_V, i8* @window_V_2, align 1
+
+ST_3: tmp_8 [1/1] 0.00ns
+:2  %tmp_8 = zext i10 %col_mid2 to i64
+
+ST_3: line_buffer_V_1_addr_1 [1/1] 0.00ns
+:3  %line_buffer_V_1_addr_1 = getelementptr [640 x i8]* @line_buffer_V_1, i64 0, i64 %tmp_8
+
+ST_3: stg_51 [1/1] 2.71ns
+:4  store i8 %in_temp_V, i8* %line_buffer_V_1_addr_1, align 1
+
+ST_3: stg_52 [1/1] 0.00ns
+:5  br label %.loopexit._crit_edge
+
+
+ <State 4>: 34.94ns
+ST_4: stg_53 [1/1] 0.00ns
+.reset:0  call void (...)* @_ssdm_op_SpecLoopName([18 x i8]* @Loop_row_Loop_col_str)
+
+ST_4: empty_4 [1/1] 0.00ns
+.reset:1  %empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 308321, i64 308321, i64 308321)
+
+ST_4: stg_55 [1/1] 0.00ns
+.reset:12  call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str6) nounwind
+
+ST_4: tmp_7 [1/1] 0.00ns
+.reset:13  %tmp_7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str6)
+
+ST_4: stg_57 [1/1] 0.00ns
+.reset:14  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_4: window_V_0_load [1/1] 0.00ns
+.preheader79.0:0  %window_V_0_load = load i8* @window_V_0, align 1
+
+ST_4: p_shl1 [1/1] 0.00ns
+.preheader79.0:1  %p_shl1 = call i13 @_ssdm_op_BitConcatenate.i13.i8.i5(i8 %window_V_0_load, i5 0)
+
+ST_4: p_shl1_cast [1/1] 0.00ns
+.preheader79.0:2  %p_shl1_cast = zext i13 %p_shl1 to i14
+
+ST_4: p_shl2 [1/1] 0.00ns
+.preheader79.0:3  %p_shl2 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %window_V_0_load, i3 0)
+
+ST_4: p_shl2_cast [1/1] 0.00ns
+.preheader79.0:4  %p_shl2_cast = zext i11 %p_shl2 to i14
+
+ST_4: r_V [1/1] 1.96ns
+.preheader79.0:5  %r_V = sub i14 %p_shl2_cast, %p_shl1_cast
+
+ST_4: r_V_cast [1/1] 0.00ns
+.preheader79.0:6  %r_V_cast = sext i14 %r_V to i16
+
+ST_4: window_V_1_load [1/1] 0.00ns
+.preheader79.0:7  %window_V_1_load = load i8* @window_V_1, align 1
+
+ST_4: rhs_V_s [1/1] 0.00ns
+.preheader79.0:8  %rhs_V_s = zext i8 %window_V_1_load to i16
+
+ST_4: r_V_s [1/1] 3.36ns
+.preheader79.0:9  %r_V_s = mul i16 %rhs_V_s, 67
+
+ST_4: window_V_2_load [1/1] 0.00ns
+.preheader79.0:10  %window_V_2_load = load i8* @window_V_2, align 1
+
+ST_4: rhs_V_1 [1/1] 0.00ns
+.preheader79.0:11  %rhs_V_1 = zext i8 %window_V_2_load to i16
+
+ST_4: r_V_2 [1/1] 3.36ns
+.preheader79.0:12  %r_V_2 = mul i16 %rhs_V_1, -114
+
+ST_4: tmp_13_2_cast [1/1] 0.00ns
+.preheader79.0:13  %tmp_13_2_cast = sext i16 %r_V_2 to i17
+
+ST_4: tmp1 [1/1] 3.02ns
+.preheader79.0:14  %tmp1 = add i16 %r_V_s, %r_V_cast
+
+ST_4: tmp1_cast [1/1] 0.00ns
+.preheader79.0:15  %tmp1_cast = sext i16 %tmp1 to i17
+
+ST_4: temp_v_V_2 [1/1] 3.02ns
+.preheader79.0:16  %temp_v_V_2 = add i17 %tmp1_cast, %tmp_13_2_cast
+
+ST_4: convolution_buffer_V_1_load [1/1] 0.00ns
+.preheader79.0:17  %convolution_buffer_V_1_load = load i17* @convolution_buffer_V_1, align 4
+
+ST_4: tmp [1/1] 0.00ns
+.preheader79.0:18  %tmp = call i22 @_ssdm_op_BitConcatenate.i22.i17.i5(i17 %convolution_buffer_V_1_load, i5 0)
+
+ST_4: p_shl3_cast [1/1] 0.00ns
+.preheader79.0:19  %p_shl3_cast = sext i22 %tmp to i24
+
+ST_4: tmp_1 [1/1] 0.00ns
+.preheader79.0:20  %tmp_1 = call i20 @_ssdm_op_BitConcatenate.i20.i17.i3(i17 %convolution_buffer_V_1_load, i3 0)
+
+ST_4: p_shl4_cast [1/1] 0.00ns
+.preheader79.0:21  %p_shl4_cast = sext i20 %tmp_1 to i24
+
+ST_4: r_V_4 [1/1] 2.20ns
+.preheader79.0:22  %r_V_4 = sub i24 %p_shl4_cast, %p_shl3_cast
+
+ST_4: convolution_buffer_V_2_load [1/1] 0.00ns
+.preheader79.0:23  %convolution_buffer_V_2_load = load i17* @convolution_buffer_V_2, align 4
+
+ST_4: stg_82 [1/1] 0.00ns
+.preheader79.0:24  store i17 %convolution_buffer_V_2_load, i17* @convolution_buffer_V_1, align 4
+
+ST_4: lhs_V_3_1 [1/1] 0.00ns
+.preheader79.0:25  %lhs_V_3_1 = sext i17 %convolution_buffer_V_2_load to i24
+
+ST_4: r_V_4_1 [1/1] 3.36ns
+.preheader79.0:26  %r_V_4_1 = mul i24 %lhs_V_3_1, 71
+
+ST_4: lhs_V_cast_cast [1/1] 0.00ns
+.preheader79.0:27  %lhs_V_cast_cast = sext i17 %temp_v_V_2 to i23
+
+ST_4: r_V_1 [1/1] 3.36ns
+.preheader79.0:28  %r_V_1 = mul i23 %lhs_V_cast_cast, -22
+
+ST_4: r_V_1_cast [1/1] 0.00ns
+.preheader79.0:29  %r_V_1_cast = sext i23 %r_V_1 to i24
+
+ST_4: tmp2 [1/1] 3.02ns
+.preheader79.0:30  %tmp2 = add i24 %r_V_4, %r_V_1_cast
+
+ST_4: temp_h_V [1/1] 3.02ns
+.preheader79.0:31  %temp_h_V = add i24 %tmp2, %r_V_4_1
+
+ST_4: stg_90 [1/1] 0.00ns
+.preheader79.0:32  store i17 %temp_v_V_2, i17* @convolution_buffer_V_2, align 4
+
+ST_4: sext_cast [1/1] 0.00ns
+.preheader79.0:33  %sext_cast = sext i24 %temp_h_V to i48
+
+ST_4: mul [1/1] 9.42ns
+.preheader79.0:34  %mul = mul i48 %sext_cast, 16909321
+
+ST_4: neg_mul [1/1] 2.92ns
+.preheader79.0:35  %neg_mul = sub i48 0, %mul
+
+ST_4: tmp_2 [1/1] 0.00ns
+.preheader79.0:36  %tmp_2 = call i1 @_ssdm_op_BitSelect.i1.i24.i32(i24 %temp_h_V, i32 23)
+
+ST_4: tmp_3 [1/1] 0.00ns (grouped into LUT with out node neg_ti)
+.preheader79.0:37  %tmp_3 = call i17 @_ssdm_op_PartSelect.i17.i48.i32.i32(i48 %neg_mul, i32 31, i32 47)
+
+ST_4: tmp_6 [1/1] 0.00ns (grouped into LUT with out node neg_ti)
+.preheader79.0:38  %tmp_6 = call i17 @_ssdm_op_PartSelect.i17.i48.i32.i32(i48 %mul, i32 31, i32 47)
+
+ST_4: p_v_v [1/1] 0.00ns (grouped into LUT with out node neg_ti)
+.preheader79.0:39  %p_v_v = select i1 %tmp_2, i17 %tmp_3, i17 %tmp_6
+
+ST_4: neg_ti [1/1] 2.08ns (out node of the LUT)
+.preheader79.0:40  %neg_ti = sub i17 0, %p_v_v
+
+ST_4: tmp_10 [1/1] 0.00ns (grouped into LUT with out node tmp_13)
+.preheader79.0:41  %tmp_10 = trunc i17 %neg_ti to i8
+
+ST_4: tmp_11 [1/1] 0.00ns (grouped into LUT with out node tmp_13)
+.preheader79.0:42  %tmp_11 = call i8 @_ssdm_op_PartSelect.i8.i48.i32.i32(i48 %mul, i32 31, i32 38)
+
+ST_4: tmp_12 [1/1] 0.00ns (grouped into LUT with out node tmp_13)
+.preheader79.0:43  %tmp_12 = select i1 %tmp_2, i8 %tmp_10, i8 %tmp_11
+
+ST_4: tmp_13 [1/1] 1.72ns (out node of the LUT)
+.preheader79.0:44  %tmp_13 = add i8 %tmp_12, 63
+
+ST_4: stg_103 [1/1] 0.00ns
+.preheader79.0:45  call void @_ssdm_op_Write.axis.volatile.i8P(i8* %out_img_V, i8 %tmp_13)
+
+ST_4: stg_104 [1/1] 0.00ns
+.preheader79.0:46  br label %._crit_edge74
+
+ST_4: empty [1/1] 0.00ns
+._crit_edge74:0  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str6, i32 %tmp_7)
+
+ST_4: stg_106 [1/1] 0.00ns
+._crit_edge74:2  br label %0
+
+
+ <State 5>: 0.00ns
+ST_5: stg_107 [1/1] 0.00ns
+:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 41.7ns, clock uncertainty: 5.21ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

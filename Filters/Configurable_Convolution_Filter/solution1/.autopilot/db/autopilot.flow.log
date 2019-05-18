@@ -1,0 +1,569 @@
+@I [HLS-0] Workspace /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1 opened at Fri Sep 15 14:24:11 CEST 2017
+@I [HLS-100] Command "config_clock -quiet -name default -period 41.666666666666664 -unit ns -default=false "
+@I [SYN-201] Setting up clock 'default' with a period of 41.6667ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0.000193Total elapsed time: 0.889 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 5.2e-05Total elapsed time: 0.894 sec.
+@I [HLS-100] Command "import_lib /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000657Total elapsed time: 0.898 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000513Total elapsed time: 0.899 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000627Total elapsed time: 0.900 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/maxi.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000825Total elapsed time: 0.902 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/saxilite.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000409Total elapsed time: 0.903 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005098Total elapsed time: 0.903 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000421Total elapsed time: 0.904 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfir.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000308Total elapsed time: 0.905 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000396Total elapsed time: 0.905 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/ip/dds_compiler.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000407Total elapsed time: 0.906 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009894Total elapsed time: 0.908 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000863Total elapsed time: 0.911 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_vivado.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000908Total elapsed time: 0.912 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000383Total elapsed time: 0.918 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000288Total elapsed time: 0.920 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000484Total elapsed time: 0.921 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001651Total elapsed time: 0.921 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000906Total elapsed time: 0.925 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006384Total elapsed time: 0.926 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000538Total elapsed time: 0.927 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 1.2e-05Total elapsed time: 0.927 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 2.4e-05Total elapsed time: 0.928 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 6e-06Total elapsed time: 0.928 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.027874Total elapsed time: 0.931 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00161Total elapsed time: 0.937 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001222Total elapsed time: 0.939 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002625Total elapsed time: 0.943 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005866Total elapsed time: 0.949 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008156Total elapsed time: 0.958 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015114Total elapsed time: 0.958 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012649Total elapsed time: 0.971 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009789Total elapsed time: 0.981 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/ip/dds_compiler.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004437Total elapsed time: 0.986 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000887Total elapsed time: 0.988 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000272Total elapsed time: 0.988 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.127391Total elapsed time: 1.117 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.180606Total elapsed time: 1.117 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000249Total elapsed time: 1.119 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.183316Total elapsed time: 1.119 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.183874Total elapsed time: 1.119 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 1e-05Total elapsed time: 1.120 sec.
+@I [HLS-100] Command "import_lib /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_hp.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000883Total elapsed time: 1.124 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00382Total elapsed time: 1.126 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_fpv.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000157Total elapsed time: 1.137 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000103Total elapsed time: 1.137 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 8.1e-05Total elapsed time: 1.137 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000447Total elapsed time: 1.137 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000445Total elapsed time: 1.138 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002306Total elapsed time: 1.138 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003776Total elapsed time: 1.139 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq_hp.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001426Total elapsed time: 1.141 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.022383Total elapsed time: 1.146 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001833Total elapsed time: 1.148 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002338Total elapsed time: 1.148 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 9e-06Total elapsed time: 1.157 sec.
+@I [HLS-100] Command "license_isbetapart xc7z020 "
+@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0.024114Total elapsed time: 1.201 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 8e-06Total elapsed time: 1.204 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1.2e-05Total elapsed time: 1.205 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 4e-06Total elapsed time: 1.205 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.03068Total elapsed time: 1.210 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 9e-06Total elapsed time: 1.215 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.003721Total elapsed time: 1.221 sec.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.03899Total elapsed time: 1.221 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 7e-06Total elapsed time: 1.222 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1.4e-05Total elapsed time: 1.222 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 4e-06Total elapsed time: 1.222 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.299666Total elapsed time: 1.233 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 -tool vivado "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 1.3e-05Total elapsed time: 1.238 sec.
+@I [HLS-100] Command "license_isbetapart xc7z020 "
+@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0.000182Total elapsed time: 1.239 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 1.1e-05Total elapsed time: 1.247 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0.00014Total elapsed time: 1.248 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 9e-06Total elapsed time: 1.249 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.012558Total elapsed time: 1.257 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 1.5e-05Total elapsed time: 1.260 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.004801Total elapsed time: 1.269 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.021556Total elapsed time: 1.274 sec.
+@I [HLS-100] Command "create_clock -period 24MHz -name default "
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0.003293Total elapsed time: 1.281 sec.
+@I [HLS-100] Command "csynth_design "
+@I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
+@I [HLS-10] Analyzing design file 'Configurable_Convolution_Filter/configurable_convolution_filter.cpp' ... 
+@0 [HLS-0] Analyzing design file 'Configurable_Convolution_Filter/configurable_convolution_filter.cpp' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/opt/Xilinx/Vivado_HLS/2016.2/lnx64/tools/systemc/include" -I "/opt/Xilinx/Vivado_HLS/2016.2/include" -I "/opt/Xilinx/Vivado_HLS/2016.2/include/ap_sysc" -fexceptions -I "/opt/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot" -include etc/autopilot_ssdm_op.h "Configurable_Convolution_Filter/configurable_convolution_filter.cpp"  -o "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pp.00.o"
+
+@I [HLS-100] Command "is_encrypted /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pp.00.o "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0.000425Total elapsed time: 2.449 sec.
+@I [HLS-0] Syntax Checker time: 1 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "Configurable_Convolution_Filter/configurable_convolution_filter.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot" -I "/opt/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pp.0.cpp"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-100] Command "list_core -type functional_unit "
+@I [HLS-100] Command 'list_core' returned 0; elapsed 0.000148Total elapsed time: 3.3 sec.
+@I [HLS-0] Marker-Pragma convertor: /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pp.0.cpp /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pp.0.cpp.ap-line.cpp /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-0] 
+Source processor: exec /opt/Xilinx/Vivado_HLS/2016.2/tps/lnx64/jre/bin/java -Xmx512m -classpath   "/opt/Xilinx/Vivado_HLS/2016.2/lib/classes/autopilot.sourceprocessor.jar:/opt/Xilinx/Vivado_HLS/2016.2/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/opt/Xilinx/Vivado_HLS/2016.2/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar:/opt/Xilinx/Vivado_HLS/2016.2/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar:/opt/Xilinx/Vivado_HLS/2016.2/lib/classes/com.ibm.icu_4.4.2.v20110208.jar:/opt/Xilinx/Vivado_HLS/2016.2/lib/classes/jargs.jar:/opt/Xilinx/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/org.eclipse.emf.common_2.10.1.v20150123-0348.jar:/opt/Xilinx/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.10.2.v20150123-0348.jar:/opt/Xilinx/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.10.2.v20150123-0348.jar:/opt/Xilinx/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/opt/Xilinx/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pp.0.cpp.ap-line.cpp"  -m "convolution_filter" -o "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pp.0.cpp.ap-cdt.cpp" --pp --directive /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/solution1.directive --source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/configurable_convolution_filter.cpp --error /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db --ca --es --gf --pd --p2d /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db --sd --scff /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/.systemc_flag --ad
+
+@I [HLS-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __value;
+Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __tmp;
+@I [HLS-0] Marker-Pragma convertor: /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pp.0.cpp.ap-cdt.cpp /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pragma.0.cpp /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000603Total elapsed time: 14.655 sec.
+@I [HLS-0] CDT processor time: 11 seconds per iteration
+@I [HLS-0] Pragma handling time: 0 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot" -I "/opt/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pragma.2.cpp"
+
+@I [HLS-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado_HLS/2016.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot" -I "/opt/Xilinx/Vivado_HLS/2016.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.g.bc"
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/ve_warning.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000481Total elapsed time: 16.573 sec.
+@I [HLS-10] Validating synthesis directives ...
+@0 [HLS-0] Validating synthesis directives ...
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000726Total elapsed time: 16.578 sec.
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.bc"  -disable-opt  -L/opt/Xilinx/Vivado_HLS/2016.2/lnx64/lib -lm_basic -o "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.o.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/configurable_convolution_filter.g.bc"  -disable-opt  -L/opt/Xilinx/Vivado_HLS/2016.2/lnx64/lib -lm_basic -o "/mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.g.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 "
+@I [HLS-100] Command "cleanup_all_models "
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0.000538Total elapsed time: 17.61 sec.
+@I [HLS-10] Starting code transformations ...
+@0 [HLS-0] Starting code transformations ...
+@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -indvars -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt -dce -dse -adce  -find-syn-modules -top convolution_filter  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -interface-preproc  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -globaldce -mem2reg -instcombine -dce   -gvn -globaldce -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete -reassociate  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -func-inst -deadargelim  -promote-dbg-pointer  -norm-name   /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.g.0.bc -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [XFORM-603] Inlining function 'pixel_weighted_average' into 'convolution_filter' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:137).
+@I [HLS-0] Std xform time: 484 seconds per iteration
+@I [HLS-100] Command "is_encrypted /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.g.1.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0.001097Total elapsed time: 501.831 sec.
+@I [HLS-10] Checking synthesizability ...
+@0 [HLS-0] Checking synthesizability ...
+@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine  -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -simplifycfg -mem2reg -globaldce -resolve-double-ptr  -dce -deadargelim -dce -instcombine  -function-inline -globaldce -dce  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg -deadargelim  -instcombine -dce -inst-simplify  -function-uniquify -directive-preproc -mem2reg -dse -dce  -globaldce    /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.g.1.bc -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.g.2.prechk.bc -f
+@I [HLS-0] Syn check 1/2 time: 0 seconds per iteration
+@I [HLS-0] syn check 2/2: transform -syn-check   /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.g.2.prechk.bc -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
+@I [HLS-0] Compiler optimizing ...
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.g.1.bc to /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform -hls -tmp /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db -type-info  -function-uniquify -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify  -resource-proc  -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine  -clib-intrinsic-prepare -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -deadargelim  -instcombine -dce  -pointer-simplify -dce  -port-alignment -dce  -interface-preproc  -data-pack -instcombine -dce   -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -auto-loop-pipeline  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -attach-range  -gvn -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce  -auto-par -instcombine -dce  -array-transform-check  -array-reshape -instcombine -simplifycfg -dce  -ptrArgReplace -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -indvars -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -duplicate-dataflow-processes -globaldce  -array-partition -instcombine -simplifycfg -dce  -ptrArgReplace -global-constprop -deadargelim -mem2reg  -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline -globaldce  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -loop-delete -instcombine -simplifycfg  -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments  -loop-stream -instcombine -simplifycfg -dce -globaldce  -stream-intrinsic-preproc -dce  -check-ap-stream -loop-simplify -eliminate-keepreads  -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse  -check-dataflow-syntax  -legalize-stream-variable -legalize-global -legalize-global-1  -extract-subproc -dce -dead-channel-elimination  -canonicalize-gep -globaldce -dce -gvn -deadargelim  -scalar-propagation -deadargelim -globaldce -mem2reg  -check-dataflow-channels -function-stream -annotate-dataflow-channels -dce -globaldce  -prop-fifo-spec -internal-stream-gen  -canonicalize-gep -globaldce -dce -gvn -deadargelim   -mergereturn -indvars -loop-simplify -instcombine  -array-stream -instcombine -simplifycfg -dce  -bundle-memfifo-ops -deadargelim    -function-uniquify -directive-preproc -mem2reg -dse -dce  -group-axi-access    -licm -simplifycfg -dce -loop-delete  -norm-name  /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.o.1.bc -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.o.1.tmp.bc -f
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop_col' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:89) in function 'convolution_filter' for pipelining.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:111) in function 'convolution_filter' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1.1' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:112) in function 'convolution_filter' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.2' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:118) in function 'convolution_filter' completely.
+@I [XFORM-501] Unrolling loop 'Edge_i' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:18) in function 'convolution_filter' completely.
+@I [XFORM-501] Unrolling loop 'Edge_j' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:19) in function 'convolution_filter' completely.
+@I [XFORM-101] Partitioning array 'line_buffer.V'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.V'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.V.0'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.V.1'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.V.2'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.V.3'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.V.4'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.V.5'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.V.6'  in dimension 1 completely.
+@W [XFORM-124] Array 'in_img.V' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:40): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+@W [XFORM-124] Array 'out_img.V' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:41): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+@I [HLS-0] Presyn 1 time: 2 seconds per iteration
+@I [HLS-0] presyn 2: transform -hls -keep-callgraph -scalarrepl -mem2reg  -port-alignment -attach-range -dce  -pipe-mux-gen  -indvars -loop-bound  -inst-simplify -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -globaldce -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -interface-preproc -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -simplify-global-access  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg -loop-simplify -auto-burst   -norm-name /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.o.1.tmp.bc -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.o.2.bc -f  -phase presyn
+@I [XFORM-11] Balancing expressions in function 'convolution_filter' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:40)...48 expression(s) balanced.
+@I [HLS-0] Presyn 2 time: 1 seconds per iteration
+@I [HLS-100] Command "is_encrypted /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.o.2.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0.000874Total elapsed time: 506.441 sec.
+@I [HLS-0] build ssdm: transform -hls  -function-uniquify -auto-function-inline -globaldce  -ptrArgReplace -mem2reg -instcombine -dce  -reset-lda  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -array-burst -promote-global-argument -dce  -axi4-lower -array-seg-normalize  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm  -inst-simplify -dce  -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine  -dce   -deadargelim -doublePtrSimplify  -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -global-constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -deadargelim -dce  -scalar-propagation -deadargelim -globaldce -mem2reg  -interface-preproc -interface-gen  -deadargelim -directive-preproc -inst-simplify -dce  -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce -deadargelim  -loop-simplify -phi-opt -bitop-raise  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify  -dce -bitop-lower  -loop-rewind -pointer-simplify -dce -cfgopt  -read-loop-dep -dce -bitwidth -norm-name -legalize    -cdfg-build  /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.o.2.bc -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
+@I [XFORM-541] Flattening a loop nest 'Loop_row' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:88:3) in function 'convolution_filter'.
+@I [HLS-0] Build ssdm time: 2 seconds per iteration
+@I [HLS-100] Command "is_encrypted /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.o.3.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0.001056Total elapsed time: 508.728 sec.
+@I [HLS-0] Finish building internal data model.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 490.486Total elapsed time: 508.864 sec.
+@I [HLS-111] Elapsed time: 492.999 seconds; current memory usage: 94 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 492.249Total elapsed time: 508.874 sec.
+@I [HLS-100] Command "autosyn "
+@I [HLS-10] Starting hardware synthesis ...
+@0 [HLS-0] Starting hardware synthesis ...
+@I [HLS-0] Synthesizing C/C++ design ...
+@I [HLS-10] Synthesizing 'convolution_filter' ...
+@0 [HLS-0] Synthesizing 'convolution_filter' ...
+@I [HLS-100] Command "ap_set_top_model convolution_filter "
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0.000174Total elapsed time: 508.879 sec.
+@I [HLS-100] Command "get_model_list convolution_filter -filter all-wo-channel -topdown "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0.000111Total elapsed time: 508.880 sec.
+@I [HLS-100] Command "preproc_iomode -model convolution_filter "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0.001622Total elapsed time: 508.882 sec.
+@I [HLS-100] Command "get_model_list convolution_filter -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 9.6e-05Total elapsed time: 508.883 sec.
+@I [HLS-0] Model list for configure: convolution_filter
+@I [HLS-0] Configuring Module : convolution_filter ...
+@I [HLS-100] Command "set_default_model convolution_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000171Total elapsed time: 508.884 sec.
+@I [HLS-100] Command "apply_spec_resource_limit convolution_filter "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0.000167Total elapsed time: 508.884 sec.
+@I [HLS-0] Model list for preprocess: convolution_filter
+@I [HLS-0] Preprocessing Module: convolution_filter ...
+@I [HLS-100] Command "set_default_model convolution_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000154Total elapsed time: 508.885 sec.
+@I [HLS-100] Command "cdfg_preprocess -model convolution_filter "
+@W [SYN-303] Cannot apply functional unit assignment of 'Mul_LUT' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:22->Configurable_Convolution_Filter/configurable_convolution_filter.cpp:137) on 'load' operation ('window_V_0_6_loc_1_load', Configurable_Convolution_Filter/configurable_convolution_filter.cpp:21->Configurable_Convolution_Filter/configurable_convolution_filter.cpp:137) on local variable 'window_V_0_6_loc_1' due to incompatible operation sets.
+@W [SYN-303] Cannot apply functional unit assignment of 'Mul_LUT' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:22->Configurable_Convolution_Filter/configurable_convolution_filter.cpp:137): 'p_str4' does not exist or is optimized away.
+@W [SYN-303] Cannot apply functional unit assignment of 'Mul_LUT' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:22->Configurable_Convolution_Filter/configurable_convolution_filter.cpp:137): 'p_str4' does not exist or is optimized away.
+@W [SYN-303] Cannot apply functional unit assignment of 'Mul_LUT' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:22->Configurable_Convolution_Filter/configurable_convolution_filter.cpp:137): 'p_str4' does not exist or is optimized away.
+@W [SYN-303] Cannot apply functional unit assignment of 'Mul_LUT' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:22->Configurable_Convolution_Filter/configurable_convolution_filter.cpp:137): 'p_str4' does not exist or is optimized away.
+@W [SYN-303] Cannot apply functional unit assignment of 'Mul_LUT' (Configurable_Convolution_Filter/configurable_convolution_filter.cpp:22->Configurable_Convolution_Filter/configurable_convolution_filter.cpp:137): 'p_str4' does not exist or is optimized away.
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.018805Total elapsed time: 508.912 sec.
+@I [HLS-100] Command "rtl_gen_preprocess convolution_filter "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.002047Total elapsed time: 508.915 sec.
+@I [HLS-0] Model list for synthesis: convolution_filter
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'convolution_filter' 
+@0 [HLS-0] -- Scheduling module 'convolution_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model convolution_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000138Total elapsed time: 508.919 sec.
+@I [HLS-100] Command "schedule -model convolution_filter "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop_row_Loop_col'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.310427Total elapsed time: 509.345 sec.
+@I [HLS-111] Elapsed time: 0.353927 seconds; current memory usage: 95.6 MB.
+@I [HLS-100] Command "report -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.128838Total elapsed time: 509.616 sec.
+@I [HLS-100] Command "db_write -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.121352Total elapsed time: 509.855 sec.
+@I [HLS-0] Finish scheduling convolution_filter.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'convolution_filter' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'convolution_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model convolution_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000119Total elapsed time: 509.862 sec.
+@I [HLS-100] Command "bind -model convolution_filter "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=convolution_filter
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.077624Total elapsed time: 509.943 sec.
+@I [HLS-111] Elapsed time: 0.340507 seconds; current memory usage: 97.2 MB.
+@I [HLS-100] Command "report -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.249428Total elapsed time: 510.406 sec.
+@I [HLS-100] Command "db_write -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.244667Total elapsed time: 510.878 sec.
+@I [HLS-0] Finish binding convolution_filter.
+@I [HLS-100] Command "get_model_list convolution_filter -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0.000154Total elapsed time: 510.879 sec.
+@I [HLS-0] Preprocessing for RTLGen ...
+@I [HLS-100] Command "rtl_gen_preprocess convolution_filter "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.001057Total elapsed time: 510.881 sec.
+@I [HLS-0] Model list for RTL generation: convolution_filter
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'convolution_filter' 
+@0 [HLS-0] -- Generating RTL for module 'convolution_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model convolution_filter -vendor xilinx -mg_file /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.compgen.tcl "
+@I [RTGEN-500] Setting interface mode on port 'convolution_filter/in_img_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'convolution_filter/out_img_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on function 'convolution_filter' to 'ap_ctrl_hs'.
+@W [RTGEN-101] Register 'window_V_0_6' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_1_6' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_2_6' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_3_6' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_4_6' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_5_6' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_6_6' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_0_1' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_0_2' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_0_3' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_0_4' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_0_5' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_1_1' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_1_2' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_1_3' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_1_4' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_1_5' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_2_1' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_2_2' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_2_3' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_2_4' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_2_5' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_3_1' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_3_2' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_3_3' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_3_4' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_3_5' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_4_1' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_4_2' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_4_3' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_4_4' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_4_5' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_5_1' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_5_2' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_5_3' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_5_4' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_5_5' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_6_1' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_6_2' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_6_3' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_6_4' is power-on initialization.
+@W [RTGEN-101] Register 'window_V_6_5' is power-on initialization.
+@I [RTGEN-100] Generating core module 'convolution_filter_mul_8ns_3ns_11_1': 1 instance(s).
+@I [RTGEN-100] Generating core module 'convolution_filter_mul_8ns_4ns_12_1': 3 instance(s).
+@I [RTGEN-100] Generating core module 'convolution_filter_mul_8ns_5ns_13_1': 7 instance(s).
+@I [RTGEN-100] Generating core module 'convolution_filter_mul_8ns_6ns_14_1': 15 instance(s).
+@I [RTGEN-100] Generating core module 'convolution_filter_mul_8ns_7ns_15_1': 17 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'convolution_filter'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.14116Total elapsed time: 511.203 sec.
+@I [HLS-111] Elapsed time: 0.653631 seconds; current memory usage: 99.5 MB.
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00063Total elapsed time: 511.228 sec.
+@I [HLS-100] Command "gen_rtl convolution_filter -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/syn/systemc/convolution_filter -synmodules convolution_filter "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.038904Total elapsed time: 511.435 sec.
+@I [HLS-100] Command "gen_rtl convolution_filter -istop -style xilinx -f -lang vhdl -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/syn/vhdl/convolution_filter "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.158019Total elapsed time: 511.708 sec.
+@I [HLS-100] Command "gen_rtl convolution_filter -istop -style xilinx -f -lang vlog -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/syn/verilog/convolution_filter "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.100508Total elapsed time: 511.951 sec.
+@I [HLS-100] Command "export_constraint_db -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.constraint.tcl -f -tool general "
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0.00052Total elapsed time: 511.956 sec.
+@I [HLS-100] Command "report -model convolution_filter -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.design.xml -verbose -f -dv "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.115307Total elapsed time: 512.106 sec.
+@I [HLS-100] Command "report -model convolution_filter -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.sdaccel.xml -verbose -f -sdaccel "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.2051Total elapsed time: 512.363 sec.
+@I [HLS-100] Command "gen_tb_info convolution_filter -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter -p /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.007613Total elapsed time: 512.387 sec.
+@I [HLS-100] Command "report -model convolution_filter -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/syn/report/convolution_filter_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.080299Total elapsed time: 512.481 sec.
+@I [HLS-100] Command "report -model convolution_filter -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/syn/report/convolution_filter_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.039305Total elapsed time: 512.523 sec.
+@I [HLS-100] Command "report -model convolution_filter -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.434578Total elapsed time: 513.209 sec.
+@I [HLS-100] Command "db_write -model convolution_filter -o /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.19673Total elapsed time: 513.556 sec.
+@I [HLS-100] Command "sc_get_clocks convolution_filter "
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 7e-06Total elapsed time: 513.687 sec.
+@I [HLS-100] Command "sc_get_portdomain convolution_filter "
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 3e-06Total elapsed time: 513.687 sec.
+@I [HLS-0] Model list for RTL component generation: convolution_filter
+@I [HLS-0] Handling components in module [convolution_filter] ... 
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.compgen.tcl "
+@I [HLS-0] Found component convolution_filter_mul_8ns_6ns_14_1.
+@I [HLS-0] Append model convolution_filter_mul_8ns_6ns_14_1
+@I [HLS-0] Found component convolution_filter_mul_8ns_7ns_15_1.
+@I [HLS-0] Append model convolution_filter_mul_8ns_7ns_15_1
+@I [HLS-0] Found component convolution_filter_mul_8ns_5ns_13_1.
+@I [HLS-0] Append model convolution_filter_mul_8ns_5ns_13_1
+@I [HLS-0] Found component convolution_filter_mul_8ns_4ns_12_1.
+@I [HLS-0] Append model convolution_filter_mul_8ns_4ns_12_1
+@I [HLS-0] Found component convolution_filter_mul_8ns_3ns_11_1.
+@I [HLS-0] Append model convolution_filter_mul_8ns_3ns_11_1
+@I [HLS-0] Found component convolution_filter_line_buffer_V_0.
+@I [HLS-0] Append model convolution_filter_line_buffer_V_0
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003013Total elapsed time: 513.701 sec.
+@I [HLS-0] Append model convolution_filter
+@I [HLS-0] Generating RTL model list ...
+@I [HLS-0] All models in this session: convolution_filter_mul_8ns_6ns_14_1 convolution_filter_mul_8ns_7ns_15_1 convolution_filter_mul_8ns_5ns_13_1 convolution_filter_mul_8ns_4ns_12_1 convolution_filter_mul_8ns_3ns_11_1 convolution_filter_line_buffer_V_0 convolution_filter
+@I [HLS-0] To file: write model convolution_filter_mul_8ns_6ns_14_1
+@I [HLS-0] To file: write model convolution_filter_mul_8ns_7ns_15_1
+@I [HLS-0] To file: write model convolution_filter_mul_8ns_5ns_13_1
+@I [HLS-0] To file: write model convolution_filter_mul_8ns_4ns_12_1
+@I [HLS-0] To file: write model convolution_filter_mul_8ns_3ns_11_1
+@I [HLS-0] To file: write model convolution_filter_line_buffer_V_0
+@I [HLS-0] To file: write model convolution_filter
+@I [HLS-0] Finished generating RTL model list.
+
+
+@I [HLS-0] RTL Generation done.
+@I [HLS-0] CAS Generation done.
+@I [HLS-0] CBC Generation done.
+@I [HLS-100] Command "export_ssdm /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/a.export.ll "
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.006521Total elapsed time: 513.725 sec.
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001362Total elapsed time: 513.739 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 513.745 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002959Total elapsed time: 513.746 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001744Total elapsed time: 513.750 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001275Total elapsed time: 513.753 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000294Total elapsed time: 513.753 sec.
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001187Total elapsed time: 513.757 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00151Total elapsed time: 513.761 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000825Total elapsed time: 513.763 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002262Total elapsed time: 513.765 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003749Total elapsed time: 513.770 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006883Total elapsed time: 513.777 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01169Total elapsed time: 513.778 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011578Total elapsed time: 513.789 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00859Total elapsed time: 513.799 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/ip/dds_compiler.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005277Total elapsed time: 513.806 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001322Total elapsed time: 513.808 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000526Total elapsed time: 513.810 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.131812Total elapsed time: 513.942 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.180626Total elapsed time: 513.942 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000495Total elapsed time: 513.945 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.186047Total elapsed time: 513.947 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.187646Total elapsed time: 513.948 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002309Total elapsed time: 513.952 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003241Total elapsed time: 513.953 sec.
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001161Total elapsed time: 513.957 sec.
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001061Total elapsed time: 513.960 sec.
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001054Total elapsed time: 513.965 sec.
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001117Total elapsed time: 513.968 sec.
+@I [HLS-100] Command "source /mnt/hgfs/Dropbox/Filtri_VivadoHLS/Configurable_Convolution_Filter/solution1/.autopilot/db/convolution_filter.compgen.tcl "
+@I [RTMG-282] Generating pipelined core: 'convolution_filter_mul_8ns_6ns_14_1_Mul_LUT_0'
+@I [RTMG-282] Generating pipelined core: 'convolution_filter_mul_8ns_7ns_15_1_Mul_LUT_1'
+@I [RTMG-282] Generating pipelined core: 'convolution_filter_mul_8ns_5ns_13_1_Mul_LUT_2'
+@I [RTMG-282] Generating pipelined core: 'convolution_filter_mul_8ns_4ns_12_1_Mul_LUT_3'
+@I [RTMG-282] Generating pipelined core: 'convolution_filter_mul_8ns_3ns_11_1_Mul_LUT_4'
+@I [RTMG-278] Implementing memory 'convolution_filter_line_buffer_V_0_ram' using block RAMs with power-on initialization.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.152828Total elapsed time: 514.251 sec.
+@I [HLS-10] Finished generating all RTL models.
+@0 [HLS-0] Finished generating all RTL models.
+@I [SYSC-301] Generating SystemC RTL for convolution_filter.
+@I [VHDL-304] Generating VHDL RTL for convolution_filter.
+@I [VLOG-307] Generating Verilog RTL for convolution_filter.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 3.33928Total elapsed time: 514.628 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 495.59Total elapsed time: 514.629 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 495.961Total elapsed time: 514.629 sec.
+@I [HLS-100] Command "cleanup_all "
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.034512Total elapsed time: 514.667 sec.
