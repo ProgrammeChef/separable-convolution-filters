@@ -1,6 +1,8 @@
 # Separable Convolution Filters – Separable convolution filters for FPGA
 
-Separable convolution filters for FPGA. Project for my bachelor's degree thesis at University of Bologna.
+Software module for high-level synthesis (HLS) of separable convolution filters to be implemented on FPGA platform, developed with Vivado HLS. Project for my bachelor's degree thesis at University of Bologna, supervised by professor Stefano Mattoccia.
+
+The project constituted a step for the future development of the implementation of a convolutional neural network (CNN) on the FPGA, exploiting the computational optimization of separable convolution filters and fixed-point arithmetic.
 
 (A.Y. 2017-2018)
 
